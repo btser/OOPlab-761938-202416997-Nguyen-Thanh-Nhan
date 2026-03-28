@@ -23,4 +23,6 @@ public class Ex2_2_5 {
             result += "The quotient of " + strNum1 + " and " + strNum2 + " is: " + (num1 / num2);
 
         JOptionPane.showMessageDialog(null, result, "result", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
     }
+}
