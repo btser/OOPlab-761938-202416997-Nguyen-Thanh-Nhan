@@ -88,8 +88,7 @@ public class Ex2_2_6 {
                 }
             }
         }
-
+        System.exit(0);
     }
-    System.exit(0);
 }
 
