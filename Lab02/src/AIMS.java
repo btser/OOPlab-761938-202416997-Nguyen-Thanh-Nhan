@@ -11,12 +11,16 @@ public class AIMS {
 
         //DigitalVideoDisc[] dvdList = {disc_1, disc_2, disc_3};
         newOrder.addDigitalVideoDisc(disc_1, disc_2);
+        newOrder.addDigitalVideoDisc(disc_3);
 
+        newOrder.printCart();
         System.out.print("Total cost is: ");
         System.out.println(newOrder.totalCost());
 
         newOrder.removeDigitalVideoDisc(disc_3);                           // remove disc Aladin
         System.out.print("Total cost after remove disc 3 is: ");        //  print total cost after remove disc Aladin
         System.out.println(newOrder.totalCost());
+
+        
     }
 }

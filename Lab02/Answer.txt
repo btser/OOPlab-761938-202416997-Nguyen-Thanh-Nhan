@@ -1,6 +1,24 @@
+Section 9:
+    Question:
+        Reading Assignment: When should accessor methods be used?
+        Read the following article and find the best possible answer to the above question: Holub, Allen. “Why getter and setter methods are evil” JavaWorld, 5 Sep. 2003,
+        https://www.infoworld.com/article/2073723/why-getter-and-setter-methods-are-evil.html
+        You should expand your research to other sources as well. For the response, give a summary of your findings in the form of a mindmap. 
+        You can draw this mind map by hand and take a picture of your work or use any online tools. In both cases, the accepted format for the image file is one of the following: .png, .jpg, .jpeg and .pdf.
+    Answer:
+        Bản chất của OOP là giấu đi các chi tiết bên trong. Khi tạo getter/setter cho mọi biến, tức là đang phơi bày mọi thứ của đối tượng ra ngoài, làm phá vỡ đi tính đóng gói...
+        mind_map.jpg nằm trong cùng thư mục.
+
+Section 10:
+    Question:
+        - If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+    Answer:
+        No, Java does not allow this if both parameters are of the same type (e.g., both are String). 
+        Java distinguishes overloaded constructors by the number, type, and order of parameters, not by the parameter names. Since DVD(String title) and DVD(String category) have the same signature (DVD(String)), it will cause a compile-time error.
+
 Section 15:
     Question: Is Java a pass by value or a pass by reference programming language?
-    Answer: Java pass by value.
+    Answer: Java always pass by value.
     
     Question: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
     Answer: When calling swap(jungleDVD, cinderellaDVD), Java just give the copy of jungleDVD's reference and cinderellaDVD's reference,

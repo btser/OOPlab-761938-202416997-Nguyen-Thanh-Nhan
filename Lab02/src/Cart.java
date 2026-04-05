@@ -55,4 +55,12 @@ public class Cart {
         }
         return total_cost;
     }
+
+    public void printCart()                                       // Test and print id, title, cost of the DVD
+    {
+        for (int i = 0; i < qtyOrdered; i++)
+        {
+            System.out.println(itemsOrdered[i].getId() + " " + itemsOrdered[i].getTitle() + " " + itemsOrdered[i].getCost());
+        }
+    }
 }
