@@ -9,8 +9,8 @@ public class AIMS {
 
         DigitalVideoDisc disc_3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 
-        DigitalVideoDisc[] dvdList = {disc_1, disc_2, disc_3};
-        newOrder.addDigitalVideoDisc(dvdList);
+        //DigitalVideoDisc[] dvdList = {disc_1, disc_2, disc_3};
+        newOrder.addDigitalVideoDisc(disc_1, disc_2);
 
         System.out.print("Total cost is: ");
         System.out.println(newOrder.totalCost());
