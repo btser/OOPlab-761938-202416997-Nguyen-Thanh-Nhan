@@ -1,0 +1,10 @@
+Section 15:
+    Question: Is Java a pass by value or a pass by reference programming language?
+    Answer: Java pass by value.
+    
+    Question: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+    Answer: When calling swap(jungleDVD, cinderellaDVD), Java just give the copy of jungleDVD's reference and cinderellaDVD's reference,
+    and when swap objects o1, o2. We just change the copy, not original objects.
+
+    Question: After the call of changTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the jungleDVD changed?
+    Answer: When calling dvd.setTitle, Java change the original objects.
