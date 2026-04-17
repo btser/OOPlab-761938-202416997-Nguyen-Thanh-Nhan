@@ -1,3 +1,5 @@
+package hust.soict.hedspi.aims.disc;
+
 public class DigitalVideoDisc {
     private String title;
     private String category;
@@ -25,6 +27,10 @@ public class DigitalVideoDisc {
     public int getId() {
         return id;
     }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
         this.title = title;
         this.category = category;
@@ -54,7 +60,8 @@ public class DigitalVideoDisc {
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
     }
-    public void setTitle(String title) {
-        this.title = title;
+    public String toString()
+    {
+        return "DVD - " + id + " - " + title + " - " + category + " - " + director + " - " + length + ": " + cost + "$" ;
     }
 }

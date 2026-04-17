@@ -1,3 +1,8 @@
+package hust.soict.hedspi.aims;
+import hust.soict.hedspi.aims.cart.Cart;
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+import java.util.Scanner;
+
 public class AIMS {
 
     public static void main(String[] args)                              
@@ -10,17 +15,18 @@ public class AIMS {
         DigitalVideoDisc disc_3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
 
         //DigitalVideoDisc[] dvdList = {disc_1, disc_2, disc_3};
-        newOrder.addDigitalVideoDisc(disc_1, disc_2);
-        newOrder.addDigitalVideoDisc(disc_3);
 
-        newOrder.printCart();
-        System.out.print("Total cost is: ");
-        System.out.println(newOrder.totalCost());
+        newOrder.addDigitalVideoDisc(disc_1, disc_2);               // add dvd and notify when dvd has added or not
+        newOrder.addDigitalVideoDisc(disc_3);
+    
+        System.out.println("********************Cart********************");
+
+        newOrder.printCart();                               // print out all information of dvds && total cost
+
+        System.out.println("********************************************");
 
         newOrder.removeDigitalVideoDisc(disc_3);                           // remove disc Aladin
         System.out.print("Total cost after remove disc 3 is: ");        //  print total cost after remove disc Aladin
         System.out.println(newOrder.totalCost());
-
-        
     }
 }

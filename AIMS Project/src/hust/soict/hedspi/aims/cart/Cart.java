@@ -1,3 +1,6 @@
+package hust.soict.hedspi.aims.cart;
+import hust.soict.hedspi.aims.disc.DigitalVideoDisc;
+
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
@@ -56,11 +59,43 @@ public class Cart {
         return total_cost;
     }
 
-    public void printCart()                                       // Test and print id, title, cost of the DVD
+    public void printCart()                                                         // Test and print DVD, total cost
     {
         for (int i = 0; i < qtyOrdered; i++)
         {
-            System.out.println(itemsOrdered[i].getId() + " " + itemsOrdered[i].getTitle() + " " + itemsOrdered[i].getCost());
+            System.out.println(itemsOrdered[i].toString());
         }
+        System.out.println("Total cost is: " + totalCost());
+    }
+
+    public void findCart(int id)                                                    // find by id
+    {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++)
+        {
+            if (id == itemsOrdered[i].getId())                                      // id start from 1
+            {
+                System.out.println(itemsOrdered[i].toString());
+                found = true;
+            }
+        }
+        if(!found)
+            System.out.println("Could not found the " + id + " DVD.");              // print if could not found
+    }
+
+    public void findCart(String title)                                              // find by title
+    {
+        boolean found = false;
+        for (int i = 0; i < qtyOrdered; i++)
+        {
+            if(itemsOrdered[i].getTitle().equals(title))
+            {
+                System.out.println(itemsOrdered[i].toString());
+                found = true;
+            }
+        }
+        if(!found)
+            System.out.println("Could not found the " + title + " DVD.");           // print if could not found
+
     }
 }
