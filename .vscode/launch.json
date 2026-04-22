@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ConcatenationInLoops",
+            "request": "launch",
+            "mainClass": "soict.hedspi.garbage.ConcatenationInLoops",
+            "projectName": "Java_85828e1"
+        },
+        {
+            "type": "java",
+            "name": "NoGarbage",
+            "request": "launch",
+            "mainClass": "soict.hedspi.garbage.NoGarbage",
+            "projectName": "Java_85828e1"
+        },
+        {
+            "type": "java",
+            "name": "NoGarbage$GarbageCreator",
+            "request": "launch",
+            "mainClass": "soict.hedspi.garbage.NoGarbage$GarbageCreator",
+            "projectName": "Java_85828e1"
+        },
+        {
+            "type": "java",
+            "name": "GarbageCreator",
+            "request": "launch",
+            "mainClass": "soict.hedspi.garbage.GarbageCreator",
+            "projectName": "Java_85828e1"
+        },
+        {
+            "type": "java",
+            "name": "ConcatenationInLoops",
+            "request": "launch",
+            "mainClass": "hust.soict.hedspi.garbage.ConcatenationInLoops",
+            "projectName": "Java_85828e1"
+        },
+        {
+            "type": "java",
+            "name": "ConcatenationInLoops",
+            "request": "launch",
+            "mainClass": "ConcatenationInLoops",
+            "projectName": "Java_85828e1"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}

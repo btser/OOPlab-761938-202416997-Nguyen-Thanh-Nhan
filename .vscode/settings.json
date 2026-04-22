@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "AIMS Project\\src",
+        "OtherProjects\\hust"
+    ],
+    "java.project.referencedLibraries": []
+}

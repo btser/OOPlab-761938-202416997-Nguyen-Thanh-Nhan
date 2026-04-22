@@ -19,7 +19,7 @@ public class CartTest {
         cart.printCart();
 
         Scanner sc = new Scanner(System.in);                            
-        System.out.print("Id of DVD: ");                               // Cannot found dvd 3 because it was deleted
+        System.out.print("Id of DVD: ");                               
         int id = sc.nextInt();
         cart.findCart(id);
 
