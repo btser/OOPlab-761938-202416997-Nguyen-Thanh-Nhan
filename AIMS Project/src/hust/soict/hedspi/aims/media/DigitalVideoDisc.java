@@ -1,14 +1,11 @@
 package hust.soict.hedspi.aims.media;
 
-public class DigitalVideoDisc extends Media{
-    private String director;
-    private int length;
+public class DigitalVideoDisc extends Disc{
+
     private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super(title, category, cost);
-        this.director = director;
-        this.length = length;
+        super(title, category, director, length, cost);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
@@ -23,20 +20,12 @@ public class DigitalVideoDisc extends Media{
         this.setId(nbDigitalVideoDiscs);
     }
     public DigitalVideoDisc(String title, String category, String director, float cost) {
-        super(title, category, cost);
-        this.director = director;
+        super(title, category, director,cost);
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
     public String toString()
     {
-        return "DVD - " + getId() + " - " + getTitle() + " - " + getCategory() + " - " + director + " - " + length + ": " + getCost() + "$" ;
-    }
-
-    public String getDirector() {
-        return director;
-    }
-    public int getLength() {
-        return length;
+        return "DVD - " + getId() + " - " + getTitle() + " - " + getCategory() + " - " + getDirector() + " - " + getLength() + ": " + getCost() + "$" ;
     }
 }
