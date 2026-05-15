@@ -2,7 +2,7 @@ package hust.soict.hedspi.aims.media;
 
 import java.security.PublicKey;
 
-public class Track {
+public class Track implements Playable {
     private String title;
     private int length;
 
@@ -17,6 +17,12 @@ public class Track {
     }
     public int getLength() {
         return length;
+    }
+
+    public void play()
+    {
+        System.out.println("Playing DVD: " + getTitle());
+        System.out.println("Track length: " + getLength());
     }
 
     @Override
