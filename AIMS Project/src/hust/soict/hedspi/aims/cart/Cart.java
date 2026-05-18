@@ -3,7 +3,6 @@ import hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
 
 public class Cart {
-    public static final int MAX_NUMBERS_ORDERED = 200;
     private ArrayList<Media> itemsOrdered = new ArrayList<Media> ();
 
     public void addMedia(Media media)
