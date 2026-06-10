@@ -1,6 +1,7 @@
 package hust.soict.hedspi.aims.cart;
 import hust.soict.hedspi.aims.media.Media;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<Media> ();
@@ -72,5 +73,15 @@ public class Cart {
         }
         if(!found)
             System.out.println("Could not found the " + title + " DVD.");           // print if could not found
+    }
+
+    public void sortByTitle() 
+    {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);            // Sort by title in cart
+    }
+
+    public void sortByCost() 
+    {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);            // Sort by cost in cart
     }
 }

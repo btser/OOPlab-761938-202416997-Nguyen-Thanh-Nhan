@@ -43,3 +43,16 @@ Section 16:
 
     Question: What are the differences between Inheritance and Polymorphism in java?
     Answer: Inheritance creates the parent-child relationship, Polymorphism uses that relationship to allow the same reference type to work with different objects types and invoke the correct overridden method at runtime.
+
+Section 17:
+    Question: What class should implement the Comparable interface?
+    Answer: The media class should implement the Comparable interface because (book, CompactDisc, DigitalVideoDisc) inherit from Media. This allow all media objects can be sorted with a common ordering rule.
+
+    Question: In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+    Answer: The compareTo method should compare media objects by title first. If two media have the same title, they should be compared by cost in descending order.
+
+    Question: Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+    Answer: No. A class can only provide one natural ordering through the compareTo() method. Therefore, using only the Comparable interface, we cannot support multiple ordering rules at the same time. To support different ordering criteria, we should use the Comparator interface.
+
+    Question:  Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+    Answer: If DVD have a different ordering rule, we'll override the compareTo method in the DigitalVideoDisc class.

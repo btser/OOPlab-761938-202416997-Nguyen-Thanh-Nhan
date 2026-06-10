@@ -7,6 +7,7 @@ import hust.soict.hedspi.aims.media.Disc;
 import hust.soict.hedspi.aims.media.Track;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class TestPassingParameter {
     public static void main(String[] args) {
@@ -29,11 +30,13 @@ public class TestPassingParameter {
         //System.out.println("cinderella dvd title: " + cinderellaDVD.getTitle());
 
         //changeTitle(jungleDVD, cinderellaDVD.getTitle());
-        //System.out.println("jungle dvd title: " + jungleDVD.getTitle());
+        //System.out.println("jungle dvd title: " + jungleDVD.getTitle())
 
         mediae.add(book);
         mediae.add(dvd);
         mediae.add(cd);
+
+        Collections.sort(mediae, Media.COMPARE_BY_COST_TITLE);      //test
 
         for (Media m : mediae)
         {
