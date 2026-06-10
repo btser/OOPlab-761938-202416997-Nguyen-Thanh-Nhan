@@ -29,8 +29,8 @@ public class Track implements Playable {
     public boolean equals (Object obj)
     {
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Track track = (Track) obj;
-        return length == track.length && (title != null && title.equalsIgnoreCase(track.title));
+        if (obj == null || !(obj instanceof Track)) return false;
+        Track other = (Track) obj;
+        return this.getTitle().equals(other.getTitle()) && this.getLength() == (other.getLength());
     }
 }
