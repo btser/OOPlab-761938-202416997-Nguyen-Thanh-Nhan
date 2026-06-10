@@ -1,3 +1,4 @@
+Lab 02:
 Section 9:
     Question:
         Reading Assignment: When should accessor methods be used?
@@ -26,3 +27,7 @@ Section 15:
 
     Question: After the call of changTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the jungleDVD changed?
     Answer: When calling dvd.setTitle, Java change the original objects.
+
+Lab 03.Section 14:
+    Question:  Which classes are aggregates of other classes?
+    Answer: Media is aggregated by Cart class or Store class. Track is aggregated by CompactDisc class.
