@@ -48,6 +48,6 @@ public abstract class Media {
         if (!(obj instanceof Media))
             return false;
         Media other = (Media) obj;
-        return.this.getTitle().equals(other.getTitle());
+        return this.getTitle().equals(other.getTitle());
     }
 }

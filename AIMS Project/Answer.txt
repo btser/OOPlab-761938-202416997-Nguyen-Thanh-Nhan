@@ -28,6 +28,18 @@ Section 15:
     Question: After the call of changTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the jungleDVD changed?
     Answer: When calling dvd.setTitle, Java change the original objects.
 
-Lab 03.Section 14:
+Lab 03:
+
+Section 14:
     Question:  Which classes are aggregates of other classes?
     Answer: Media is aggregated by Cart class or Store class. Track is aggregated by CompactDisc class.
+
+Section 16:
+    Question: What are the advantages of the Polymorphism?
+    Answer: Polymorphism allows objects of different class to be treated as objects of a common superclass. Includes: code reusability, flexibility, mantainability, dynamic behavior
+
+    Question: How is Inheritance useful to achieve Polymorphism in Java?
+    Answer: Inheritance provides the common structure, why polymorphism allows different implementations of methods such as toString or play
+
+    Question: What are the differences between Inheritance and Polymorphism in java?
+    Answer: Inheritance creates the parent-child relationship, Polymorphism uses that relationship to allow the same reference type to work with different objects types and invoke the correct overridden method at runtime.

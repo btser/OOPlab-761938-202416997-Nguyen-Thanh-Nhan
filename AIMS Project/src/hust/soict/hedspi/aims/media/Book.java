@@ -26,4 +26,10 @@ public class Book extends Media{
         else
             authors.remove(authorName);
     }
+
+    @Override
+    public String toString()
+    {
+        return "\nBook" +  "\nId: " + getId() + "\nTitle: " + getTitle() + "\nCategory: " + getCategory() + "\nCost: " + getCost();
+    }
 }
