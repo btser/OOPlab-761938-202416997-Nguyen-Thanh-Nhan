@@ -21,7 +21,7 @@ public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
             float cost = Float.parseFloat(tfCost.getText());
             String artist = tfArtist.getText();
 
-            CompactDisc cd = new CompactDisc(id, title, category, director, length, cost, artist);
+            CompactDisc cd = new CompactDisc( title, category, director, length, cost, artist);
             store.addMedia(cd);
             JOptionPane.showMessageDialog(this, "Compact Disc added successfully!");
             this.dispose();

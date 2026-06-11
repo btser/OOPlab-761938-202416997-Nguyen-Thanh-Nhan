@@ -1,4 +1,4 @@
-package hust.soict.hedspi.test;
+package hust.soict.hedspi.test.disc;
 import hust.soict.hedspi.aims.media.DigitalVideoDisc;
 import hust.soict.hedspi.aims.media.Media;
 import hust.soict.hedspi.aims.media.Book;

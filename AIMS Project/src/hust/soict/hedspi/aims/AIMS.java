@@ -166,7 +166,7 @@ public class AIMS {
     }
 
     public static void viewCart() {
-        cart.printCart();
+        cart.print();
         while (true) {
             cartMenu();
             int choice = scanner.nextInt();
@@ -197,7 +197,7 @@ public class AIMS {
                     if (s == 1) cart.sortByTitle();
                     else if (s == 2) cart.sortByCost();
                     else System.out.println("Invalid option");
-                    cart.printCart();
+                    cart.print();
                     break;
                 case 3: 
                     System.out.print("Enter title: ");

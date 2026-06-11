@@ -1,62 +1,57 @@
 package hust.soict.hedspi.aims.cart;
-import hust.soict.hedspi.aims.media.Media;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
+import hust.soict.hedspi.aims.media.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import hust.soict.hedspi.aims.exception.LimitExceededException;
+
 public class Cart {
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media> ();
+    public static final int MAX_NUMBERS_ORDERED = 20;
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
-    public void addMedia(Media media)
-    {
-        if (!itemsOrdered.contains(media))
-        {
-            itemsOrdered.add(media);
-            System.out.println("The media has been added:" + media.getTitle());
-        }else
-            System.out.println("The media is already in the cart.");
+    public void addMedia(Media media) throws LimitExceededException {
+        if (itemsOrdered.size() < MAX_NUMBERS_ORDERED) {
+            if (!itemsOrdered.contains(media)) {
+                itemsOrdered.add(media);
+                System.out.println("The media has been added: " + media.getTitle());
+            } else {
+                System.out.println("The media is already in the cart.");
+            }
+        } else {
+            throw new LimitExceededException("ERROR: The number of media has reached its limit");
+        }
     }
 
-    public void removeMedia(Media media)
-    {
-        if (itemsOrdered.contains(media))
-        {
-            itemsOrdered.remove(media);
+    public void removeMedia(Media media) {
+        if (itemsOrdered.remove(media)) {
             System.out.println("The media has been removed: " + media.getTitle());
-        }else
-            System.out.println("Cound not found the media");
-    }
-    
-    public float totalCost()
-    {
-        float total_cost = 0;
-        for (Media media : itemsOrdered)
-        {
-            total_cost += media.getCost();
+        } else {
+            System.out.println("The media was not found in the cart.");
         }
-        return total_cost;
     }
 
-    public void printCart()                                                         // Test and print DVD, total cost
-    {
-        for (Media media : itemsOrdered)
-        {
-            System.out.println(media.toString());
+    public float totalCost() {
+        float total = 0;
+        for (Media media : itemsOrdered) {
+            total += media.getCost();
         }
-        System.out.println("Total cost is: " + totalCost());
+        return total;
     }
 
-    public void sortByTitle() 
-    {
-        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);            // Sort by title in cart
-    }
-
-    public void sortByCost() 
-    {
-        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);            // Sort by cost in cart
-    }
-
-    public int getItemsCount() {
-        return itemsOrdered.size();
+    public void print() {
+        System.out.println("***********************CART***********************");
+        System.out.println("Ordered Items:");
+        int i = 1;
+        for (Media media : itemsOrdered) {
+            System.out.println(i + ". " + media.toString());
+            i++;
+        }
+        System.out.println("Total cost: " + totalCost() + " $");
+        System.out.println("***************************************************");
     }
 
     public Media searchById(int id) {
@@ -93,8 +88,34 @@ public class Cart {
         return null;
     }
 
-    
+    public void sortByTitle() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        System.out.println("Cart sorted by Title.");
+    }
+
+    public void sortByCost() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        System.out.println("Cart sorted by Cost.");
+    }
+
     public void clear() {
         itemsOrdered.clear();
+    }
+
+    // Getters and Setters
+    public static int getMaxNumbersOrdered() {
+        return MAX_NUMBERS_ORDERED;
+    }
+
+    public ObservableList<Media> getItemsOrdered() {
+        return itemsOrdered;
+    }
+
+    public void setItemsOrdered(ObservableList<Media> itemsOrdered) {
+        this.itemsOrdered = itemsOrdered;
+    }
+
+    public int getItemsCount() {
+        return itemsOrdered.size();
     }
 }
