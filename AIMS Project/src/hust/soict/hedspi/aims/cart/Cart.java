@@ -45,36 +45,6 @@ public class Cart {
         System.out.println("Total cost is: " + totalCost());
     }
 
-    public void findCart(int id)                                                    // find by id
-    {
-        boolean found = false;
-        for (Media media : itemsOrdered)
-        {
-            if (id == media.getId())                                      
-            {
-                System.out.println(media.toString());
-                found = true;
-            }
-        }
-        if(!found)
-            System.out.println("Could not found the " + id + " DVD.");              // print if could not found
-    }
-
-    public void findCart(String title)                                              // find by title
-    {
-        boolean found = false;
-        for (Media media : itemsOrdered)
-        {
-            if(media.getTitle().equals(title))
-            {
-                System.out.println(media.toString());
-                found = true;
-            }
-        }
-        if(!found)
-            System.out.println("Could not found the " + title + " DVD.");           // print if could not found
-    }
-
     public void sortByTitle() 
     {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);            // Sort by title in cart
@@ -83,5 +53,48 @@ public class Cart {
     public void sortByCost() 
     {
         Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);            // Sort by cost in cart
+    }
+
+    public int getItemsCount() {
+        return itemsOrdered.size();
+    }
+
+    public Media searchById(int id) {
+        boolean found = false;
+        for (Media item : itemsOrdered) {
+            if (item != null && item.getId() == id) {
+                System.out.println("Match found: " + item.toString());
+                found = true;
+                return item;
+            }
+        }
+        
+        if (!found) {
+            System.out.println("No DVD with ID: " + id + " was found in the cart.");
+        }
+
+        return null;
+    }
+
+    public Media searchByTitle(String title) {
+        boolean found = false;
+        for (Media item : itemsOrdered) {
+            if (item != null && item instanceof Media && item.isMatch(title)) {
+                System.out.println("Match found: " + item.toString());
+                found = true;
+                return item;
+            }
+        }
+        
+        if (!found) {
+            System.out.println("No DVD with title: " + title + " was found in the cart.");
+        }
+
+        return null;
+    }
+
+    
+    public void clear() {
+        itemsOrdered.clear();
     }
 }
