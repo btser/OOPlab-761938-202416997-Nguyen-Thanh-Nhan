@@ -56,3 +56,33 @@ Section 17:
 
     Question:  Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
     Answer: If DVD have a different ordering rule, we'll override the compareTo method in the DigitalVideoDisc class.
+
+Lab 04:
+
+    Question:
+        Programming with AWT and Swing is quite similar (similar elements including container/components,
+        and event-handling). However, there are some differences that you need to note:
+        o Compare the top-level containers in Swing and AWT
+        o Compare the class name of components in AWT and the corresponding class’s name in Swing
+        o Compare the event-handling of Swing and AWT applications
+        The resulting appearances of the applications developed using Swing and AWT might be different as well.
+        Make comparisons.
+    Answer:
+        1. Compare top-level containers:
+        - AWT uses Frame, Dialog, Applet.
+        - Swing uses JFrame, JDialog, JApplet.
+        - Swing components are added to the Content Pane, while AWT components are added directly to the container.
+
+        2. Compare class names:
+        - Swing components start with a 'J' prefix (e.g., JButton, JLabel).
+        - AWT components do not have the 'J' prefix (e.g., Button, Label).
+
+        3. Compare event-handling:
+        - Both use the same delegation event model (Source -> Listener -> Event).
+        - Swing's event model is built on top of AWT's.
+
+        4. Compare appearance:
+        - AWT is "heavyweight" (OS-dependent look).
+        - Swing is "lightweight" (Java-drawn, OS-independent).
+        - Swing supports "Pluggable Look and Feel".
+
